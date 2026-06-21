@@ -473,21 +473,21 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, updateDoc, increment, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, updateDoc, increment, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
         // =========================================================================
         // LIVE ENCRYPTED INFRASTRUCTURE PROFILE (PASTE PRODUCTION KEYS HERE)
         // =========================================================================
         const firebaseConfig = {
-    apiKey: "AIzaSyAQ1AJpECicrDdBF7l1pd8p5NzmTilhuD0",
-    authDomain: "bomani-school.firebaseapp.com",
-    projectId: "bomani-school",
-    storageBucket: "bomani-school.firebasestorage.app",
-    messagingSenderId: "649551835460",
-    appId: "1:649551835460:web:185356ae5bd33cfe3ca711",
-    measurementId: "G-643MSSHMHK"
-  };
+        apiKey: "AIzaSyAQ1AJpECicrDdBF7l1pd8p5NzmTilhuD0",
+        authDomain: "bomani-school.firebaseapp.com",
+        projectId: "bomani-school",
+        storageBucket: "bomani-school.firebasestorage.app",
+        messagingSenderId: "649551835460",
+        appId: "1:649551835460:web:185356ae5bd33cfe3ca711",
+        measurementId: "G-643MSSHMHK"
+          };
 
 
         const app = initializeApp(firebaseConfig);
