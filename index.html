@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bomani Adventist High School - Enterprise Portal</title>
     
-    <!-- PWA iOS Metas -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#1e3a8a">
     <meta name="apple-mobile-web-app-title" content="Bomani Portal">
     
-    <!-- Web App Manifest Inline Data URI (Enables Installability without extra files!) -->
-    <link rel="manifest" href="data:application/json;base64,ewogICAgIm5hbWUiOiAiQm9tYW5pIEFkdmVudGlzdCBIaWdoIFNjaG9vbCBQb3J0YWwiLAogICAgInNob3J0X25hbWUiOiAiQm9tYW5pIEFwcCIsCiAgICAic3RhcnRfdXJsIjogIi4iLAogICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjhmYWZjIiwKICAgICJ0aGVtZV9jb2xvciI6ICIjMWUzYThhIiwKICAgICJpY29ucyI6IFsKICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9jZG4tY29ucy1wbmcuZmxhdGljb24uY29tLzUxMi8yOTM2LzI5MzY5MzMucG5nIiwKICAgICAgICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAgICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICAgICAgfQogICAgXQp9">
+    <link rel="manifest" href="data:application/json;base64,ewogICAgIm5hbWUiOiAiQm9tYW5pIEFkdmVudGlzdCBIaWdoIFNjaG9vbCBQb3J0YWwiLAogICAgInNob3J0X25hbWUiOiAiQm9tYW5pIEFwcCIsCiAgICAic3RhcnRfdXJsIjogIi4iLAogICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjhmYWZjIiwKICAgICJ0aGVtZV9jb2xvciI6ICIjMWUzYThhIiwKICAgICpkaWNvbnMiOiBbCiAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vY2RuLWNvbnMtcG5nLmZsYXRpY29uLmNvbS81MTIvMjkzNi8yOTM2OTMzLnBuZyIsCiAgICAgICAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgICAgIH0KICAgIF0KfQ==">
 
     <style>
         :root {
@@ -35,24 +33,15 @@
             overflow-x: hidden;
         }
 
-        /* 1. HIGH-END BRANDED LOGIN LAYOUT */
+        /* PREMIUM BRANDED LOGIN SECTOR */
         #authContainer {
-            max-width: 460px;
-            margin: 60px auto;
-            background: rgba(255, 255, 255, 0.95);
+            max-width: 440px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.98);
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             border-top: 6px solid var(--primary);
-        }
-
-        .sandbox-helper {
-            background: #eff6ff;
-            border: 1px dashed var(--accent);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 13px;
         }
 
         .form-group {
@@ -103,7 +92,7 @@
             box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
         }
 
-        /* 2. CORE SYSTEM DASHBOARD DESIGN */
+        /* CORE PORTAL SYSTEM DASHBOARD LAYOUT */
         #dashboardWrapper {
             display: none;
         }
@@ -184,7 +173,7 @@
             display: block;
         }
 
-        /* Metrics Display Grid */
+        /* Metrics Layout Elements */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -201,13 +190,12 @@
 
         .metric-card.blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
         .metric-card.teal { background: linear-gradient(135deg, #0d9488, #0f766e); }
-        .metric-card.emerald { background: linear-gradient(135deg, #10b981, #047857); }
         .metric-card.amber { background: linear-gradient(135deg, #f59e0b, #b45309); }
 
         .metric-card h3 { margin: 0; font-size: 14px; text-transform: uppercase; opacity: 0.85; letter-spacing: 0.05em; }
         .metric-card p { margin: 10px 0 0 0; font-size: 28px; font-weight: bold; }
 
-        /* Tables layout design */
+        /* Tables Data Grid */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -241,7 +229,6 @@
         }
         .badge-success { background-color: #dcfce7; color: #15803d; }
         .badge-danger { background-color: #fee2e2; color: #b91c1c; }
-        .badge-warning { background-color: #fef3c7; color: #92400e; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -251,34 +238,27 @@
 </head>
 <body>
 
-    <!-- 1. AUTHENTICATION MODULE WITH BRANDING & SANDBOX MOCKS -->
     <div id="authContainer">
         <h2 style="text-align: center; color: var(--primary); margin-bottom: 4px;">Bomani Adventist High School</h2>
-        <h5 style="text-align: center; color: var(--accent); margin-top: 0; margin-bottom: 25px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Central Management Node</h5>
+        <h5 style="text-align: center; color: var(--accent); margin-top: 0; margin-bottom: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Central Management Node</h5>
         
-        <div class="sandbox-helper">
-            <strong>💡 Preview Sandbox Logins:</strong> Use any username below with password <code>bomani2026</code> to review dashboards instantly:<br>
-            • <code>principal</code> • <code>teacher</code> • <code>bursar</code> • <code>deputy</code> • <code>academic</code> • <code>boarding</code> • <code>ADM-2026-001</code>
-        </div>
-
         <form id="loginForm">
             <div class="form-group">
-                <label for="loginEmail">Access Account ID / Email / Admission No.</label>
-                <input type="text" id="loginEmail" required placeholder="e.g., teacher, principal, or ADM-2026-001">
+                <label for="loginEmail">Email Address / Admission ID</label>
+                <input type="text" id="loginEmail" required placeholder="name@bomani.edu or ADM-XXXX">
             </div>
             <div class="form-group">
-                <label for="loginPassword">System Key Signature</label>
+                <label for="loginPassword">Secure Password Signature</label>
                 <input type="password" id="loginPassword" required placeholder="••••••••">
             </div>
-            <button type="submit">Decrypt & Verify Access</button>
+            <button type="submit">Verify & Establish Connection</button>
         </form>
     </div>
 
-    <!-- 2. CORE MULTI-ROLE MONITOR ENGINE -->
     <div id="dashboardWrapper">
         <header>
             <h1 style="font-size: 18px; margin: 0; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                🏫 Bomani Adventist Matrix <span style="font-size: 13px; font-weight: 400; opacity: 0.8;">// SECURE CLIENT NODE</span>
+                🏫 Bomani Adventist Matrix <span style="font-size: 13px; font-weight: 400; opacity: 0.7;">// LIVE ECOSYSTEM CONNECTION</span>
             </h1>
             <div>
                 <span id="userDisplayName" style="margin-right: 25px; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px;"></span>
@@ -287,44 +267,38 @@
         </header>
 
         <div class="main-container">
-            <!-- Navigation Control Unit -->
             <nav>
-                <h3>Functional Modules</h3>
+                <h3>Authorized Modules</h3>
                 <ul id="dynamicNavLinks"></ul>
             </nav>
 
             <main>
-                <!-- SUB-PANEL: STUDENT PORTAL VIEW -->
                 <div id="panel-student" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top: 0;">Academic & Operational Ledger</h2>
                     <div class="metrics-grid">
                         <div class="metric-card blue">
                             <h3>Assigned Stream</h3>
-                            <p id="studClass">Form 3 Blue</p>
+                            <p id="studClass">Loading Class...</p>
                         </div>
                         <div class="metric-card teal">
                             <h3>Dormitory Wing</h3>
-                            <p id="studDorm">Tsavo Male Wing</p>
+                            <p id="studDorm">Loading Housing...</p>
                         </div>
                         <div class="metric-card amber">
                             <h3>Fee Account Balance</h3>
-                            <p id="studFeeBalance">22,500 KES</p>
+                            <p id="studFeeBalance">0.00 KES</p>
                         </div>
                     </div>
                     <h3 style="margin-top: 40px; color: var(--secondary);">Terminal Academic Performance Record</h3>
-                    <table>
+                    <table id="studentGradesTable">
                         <thead>
-                            <tr><th>Subject Code</th><th>Assessment Frame</th><th>Score Attained</th><th>Max Limit</th><th>Status Profile</th></tr>
+                            <tr><th>Subject Code</th><th>Assessment Frame</th><th>Score Attained</th><th>Max Limit</th></tr>
                         </thead>
-                        <tbody id="studentGradesTableBody">
-                            <tr><td><strong>MATH101</strong></td><td>Midterm Examination</td><td>84.50%</td><td>100.00%</td><td><span class="badge badge-success">Passed</span></td></tr>
-                            <tr><td><strong>ENG102</strong></td><td>Midterm Examination</td><td>76.00%</td><td>100.00%</td><td><span class="badge badge-success">Passed</span></td></tr>
-                            <tr><td><strong>SCI103</strong></td><td>Midterm Examination</td><td>42.50%</td><td>100.00%</td><td><span class="badge badge-danger">Fail Boundary</span></td></tr>
-                        </tbody>
+                        <tbody>
+                            </tbody>
                     </table>
                 </div>
 
-                <!-- SUB-PANEL: TEACHER MARKSHEET MODULE -->
                 <div id="panel-teacher" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">Terminal Marksheet Ingestion Engine</h2>
                     <form id="gradeIngestionForm">
@@ -359,19 +333,18 @@
                             <input type="text" id="gradeAdminNo" required placeholder="e.g., ADM-2026-001">
                         </div>
                         <div class="form-group">
-                            <label>Computational Score Matrix (Decimal Value Max 100)</label>
-                            <input type="number" id="gradeScore" min="0" max="100" step="0.01" required placeholder="75.50">
+                            <label>Computational Score Matrix (Max 100)</label>
+                            <input type="number" id="gradeScore" min="0" max="100" step="0.01" required placeholder="e.g., 84.50">
                         </div>
                         <button type="submit">Commit Metric To Ledger</button>
                     </form>
                 </div>
 
-                <!-- SUB-PANEL: ACADEMIC MASTER CONTROL -->
                 <div id="panel-academic_master" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">Master Matrix Timetable Propagation</h2>
                     <form id="timetableForm">
                         <div class="form-group">
-                            <label>Target Faculty Resource (Teacher Reference ID)</label>
+                            <label>Target Faculty Resource (Teacher Email)</label>
                             <input type="text" id="ttTeacher" required placeholder="teacher@bomani.edu">
                         </div>
                         <div class="form-group">
@@ -380,13 +353,12 @@
                         </div>
                         <div class="form-group">
                             <label>Operational Temporal Window (Day/Hour Allocation)</label>
-                            <input type="text" id="ttDetails" required placeholder="Tuesday 10:40 AM - 12:00 PM">
+                            <input type="text" id="ttDetails" required placeholder="e.g., Monday 08:00 AM - 09:20 AM">
                         </div>
                         <button type="submit">Publish Schedule Update Vector</button>
                     </form>
                 </div>
 
-                <!-- SUB-PANEL: BOARDING MASTER HOUSING ARCHITECTURE -->
                 <div id="panel-boarding_master" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">Dormitory Asset Allocation & Matrix Sorting</h2>
                     <form id="dormForm">
@@ -407,13 +379,12 @@
                     </form>
                 </div>
 
-                <!-- SUB-PANEL: DEPUTY PRINCIPAL DISCIPLINARY LOGS -->
                 <div id="panel-deputy_principal" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">Disciplinary Incidents & System Status Registers</h2>
                     <form id="disciplineForm">
                         <div class="form-group">
                             <label>Target Student Account Identifier</label>
-                            <input type="text" id="discAdminNo" required placeholder="ADM-2026-002">
+                            <input type="text" id="discAdminNo" required placeholder="ADM-2026-001">
                         </div>
                         <div class="form-group">
                             <label>Incident Action Vector Class</label>
@@ -425,13 +396,12 @@
                         </div>
                         <div class="form-group">
                             <label>Incident Documentation Notes (Case Context Logs)</label>
-                            <textarea id="discNotes" rows="4" required placeholder="Describe transaction context here..."></textarea>
+                            <textarea id="discNotes" rows="4" required placeholder="Document the log context detail entry..."></textarea>
                         </div>
                         <button type="submit" style="background: linear-gradient(135deg, var(--danger), #b91c1c);">Log Case Registry Context</button>
                     </form>
                 </div>
 
-                <!-- SUB-PANEL: BURSAR REVENUE ACCRUAL MANAGER -->
                 <div id="panel-bursar" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">Financial Accounts, Accruals & Receipt Clearing Ledger</h2>
                     <form id="feePaymentForm">
@@ -446,13 +416,12 @@
                         </div>
                         <div class="form-group">
                             <label>Bank/M-Pesa Cryptographic Routing Receipt Reference</label>
-                            <input type="text" id="feeRef" required placeholder="e.g., RKX872615S">
+                            <input type="text" id="feeRef" required placeholder="e.g., SGF987654X">
                         </div>
                         <button type="submit">Execute Financial Ledger Balancing</button>
                     </form>
                 </div>
 
-                <!-- SUB-PANEL: PRINCIPAL ROOT MANAGEMENT CONSOLE -->
                 <div id="panel-principal" class="dashboard-panel">
                     <h2 style="color: var(--primary); margin-top:0;">System Orchestration Command Architecture</h2>
                     
@@ -469,7 +438,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Functional Roles Permissions Matrix (Comma Separated)</label>
-                                <input type="text" id="staffRoles" placeholder="teacher, academic_master, deputy_principal" required>
+                                <input type="text" id="staffRoles" placeholder="teacher, academic_master, bursar" required>
                             </div>
                             <button type="submit">Initialize Staff Credentials</button>
                         </form>
@@ -502,14 +471,13 @@
         </div>
     </div>
 
-    <!-- 3. CENTRAL ENGINE PROCESSING FRAMEWORK (FIREBASE INT_LAYER & SANDBOX OVERRIDES) -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, updateDoc, increment, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, updateDoc, increment, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
         // =========================================================================
-        // LIVE PRODUCTION INFRASTRUCTURE PROFILE (DROP YOUR CONSOLE SNIPPET HERE)
+        // LIVE ENCRYPTED INFRASTRUCTURE PROFILE (PASTE PRODUCTION KEYS HERE)
         // =========================================================================
         const firebaseConfig = {
     apiKey: "AIzaSyAQ1AJpECicrDdBF7l1pd8p5NzmTilhuD0",
@@ -522,30 +490,13 @@
   };
 
 
-        // Standard Operational Mode Settings
-        let databaseLiveMode = false; 
-        let app, auth, db;
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
 
-        // Auto-Detect Firebase Setup Integrity Vector
-        if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
-            app = initializeApp(firebaseConfig);
-            auth = getAuth(app);
-            db = getFirestore(app);
-            databaseLiveMode = true;
-        }
+        let currentUserProfile = null;
 
-        // --- DEVELOPMENT PREVIEW MOCK SANDBOX DATA DICTIONARY ---
-        const localSandboxProfiles = {
-            'principal': { name: "Elder David Katana (Principal Control)", roles: ['principal', 'teacher'] },
-            'teacher': { name: "Madam Jane Ibrahim (Faculty Node)", roles: ['teacher'] },
-            'bursar': { name: "Bursar Accounts Station", roles: ['bursar'] },
-            'deputy': { name: "Deputy Principal Operations Engine", roles: ['deputy_principal', 'teacher'] },
-            'academic': { name: "Academic Registrar Master Suite", roles: ['academic_master', 'teacher'] },
-            'boarding': { name: "Housing Logistics Commander", roles: ['boarding_master', 'teacher'] },
-            'adm-2026-001': { name: "Student: John Doe Profile Context", roles: ['student'] }
-        };
-
-        // Routing Engine Panel Controller Function
+        // UI Panel Router Controller
         function switchPanel(panelId) {
             document.querySelectorAll('.dashboard-panel').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('nav ul li').forEach(l => l.classList.remove('active'));
@@ -557,183 +508,201 @@
             if(targetLink) targetLink.classList.add('active');
         }
 
-        // Access Routing Navigation Dynamic Generator Pipeline
-        function runDynamicUIOnboarding(profile) {
-            document.getElementById('authContainer').style.display = 'none';
-            document.getElementById('dashboardWrapper').style.display = 'block';
-            document.getElementById('userDisplayName').innerText = profile.name;
+        // Live Authentication Real-Time System Listener Pipeline Loop
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                document.getElementById('authContainer').style.display = 'none';
+                document.getElementById('dashboardWrapper').style.display = 'block';
+                
+                // Read staff mapping configuration from users collection
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                
+                if (userDoc.exists()) {
+                    currentUserProfile = userDoc.data();
+                    document.getElementById('userDisplayName').innerText = `${currentUserProfile.name} (${currentUserProfile.roles.join(', ').toUpperCase()})`;
+                    generateNavigation(currentUserProfile.roles);
+                } else {
+                    // Failover query check to map standard Student identity parameters via auth alias
+                    const studentQuery = query(collection(db, "students"), where("admission_number", "==", user.email.split('@')[0]));
+                    const querySnapshot = await getDocs(studentQuery);
+                    if(!querySnapshot.empty) {
+                        currentUserProfile = { roles: ['student'], name: user.email.split('@')[0] };
+                        document.getElementById('userDisplayName').innerText = `Student: ${currentUserProfile.name}`;
+                        generateNavigation(['student']);
+                    }
+                }
+            } else {
+                document.getElementById('authContainer').style.display = 'block';
+                document.getElementById('dashboardWrapper').style.display = 'none';
+                currentUserProfile = null;
+            }
+        });
 
+        // Dynamic System Menu Component Builder Engine
+        function generateNavigation(roles) {
             const navContainer = document.getElementById('dynamicNavLinks');
             navContainer.innerHTML = '';
-
-            profile.roles.forEach((role, index) => {
+            
+            roles.forEach((role, idx) => {
                 const li = document.createElement('li');
                 li.id = `nav-link-${role}`;
-                li.innerText = `⚙️ ${role.replace('_', ' ').toUpperCase()} INTERFACE`;
+                li.innerText = `⚙️ ${role.replace('_', ' ').toUpperCase()} MODULE`;
                 li.addEventListener('click', () => switchPanel(role));
                 navContainer.appendChild(li);
-                if(index === 0) switchPanel(role); 
+                if(idx === 0) switchPanel(role); 
             });
+
+            if(roles.includes('student')) fetchLiveStudentLedgerData();
         }
 
-        // Live Mode Authentication State Loop Listener
-        if (databaseLiveMode) {
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    const userDoc = await getDoc(doc(db, "users", user.uid));
-                    if (userDoc.exists()) {
-                        runDynamicUIOnboarding(userDoc.data());
-                    }
-                } else {
-                    executeHardResetUI();
-                }
-            });
-        }
-
-        function executeHardResetUI() {
-            document.getElementById('authContainer').style.display = 'block';
-            document.getElementById('dashboardWrapper').style.display = 'none';
-        }
-
-        // AUTH CONSOLE SIGN-IN TRANSACTION ENGINE
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        // LIVE LIVE DATABASE LOGIN CONTEXT INGESTION HANDLER
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const emailInput = document.getElementById('loginEmail').value.trim().toLowerCase();
-            const passwordInput = document.getElementById('loginPassword').value.trim();
+            let emailInput = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
 
-            // Intercept path for Local Sandbox Evaluation Engine execution
-            if (passwordInput === 'bomani2026' && localSandboxProfiles[emailInput]) {
-                alert(`🧬 SANDBOX ROUTE DETECTED // Simulating localized profile context for role node: [${emailInput}]`);
-                runDynamicUIOnboarding(localSandboxProfiles[emailInput]);
-                return;
+            if (!emailInput.includes('@')) {
+                emailInput = `${emailInput.toUpperCase()}@bomani.internal`;
             }
 
-            if (!databaseLiveMode) {
-                alert("Database Connection Warning: Missing Live Firebase credentials. Use the sandbox profiles configuration to review layouts locally.");
-                return;
-            }
-
-            // Production Pipeline Logic Connection Execute Path
-            let resolvedEmail = emailInput;
-            if (!emailInput.includes('@')) resolvedEmail = `${emailInput.toUpperCase()}@bomani.internal`;
-
-            signInWithEmailAndPassword(auth, resolvedEmail, passwordInput)
-                .catch(err => alert("Access Denied: Infrastructure signature mapping mismatch.\n" + err.message));
+            signInWithEmailAndPassword(auth, emailInput, password)
+                .catch(err => alert("Access Denied: Infrastructure authentication signature verification failed.\n" + err.message));
         });
 
-        document.getElementById('logoutBtn').addEventListener('click', () => {
-            if (databaseLiveMode) signOut(auth);
-            else executeHardResetUI();
-        });
+        document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
 
-        // SYSTEM WORKFLOW OPERATIONS PIPELINES (FIRESTORE PIPING LOGIC BOUNDS)
+        // CLOUD STORAGE WRITING TRANSACTIONS
         document.getElementById('admissionForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const payload = {
-                admission_number: document.getElementById('admNumber').value.toUpperCase(),
-                full_name: document.getElementById('admName').value,
-                current_class: document.getElementById('admClass').value,
-                fee_balance: parseFloat(document.getElementById('admFee').value),
-                dormitory: "Unassigned", status: "Active"
-            };
-
-            if (databaseLiveMode) {
-                await setDoc(doc(db, "students", payload.admission_number), payload);
-            }
-            alert(`Execution Completed: Profile locked to cluster database path context [${payload.admission_number}]`);
-            e.target.reset();
+            const adm = document.getElementById('admNumber').value.toUpperCase();
+            try {
+                await setDoc(doc(db, "students", adm), {
+                    admission_number: adm,
+                    full_name: document.getElementById('admName').value,
+                    current_class: document.getElementById('admClass').value,
+                    fee_balance: parseFloat(document.getElementById('admFee').value),
+                    dormitory: "Unassigned", status: "Active"
+                });
+                alert(`Success: Student record deployed securely to cloud map cluster [${adm}]`);
+                e.target.reset();
+            } catch (err) { alert("Write Operation Failed: " + err.message); }
         });
 
         document.getElementById('gradeIngestionForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const admin = document.getElementById('gradeAdminNo').value.toUpperCase();
-            const gradeData = {
-                subject: document.getElementById('gradeSubjectSelect').value,
-                assessment: document.getElementById('gradeAssessmentSelect').value,
-                marks: parseFloat(document.getElementById('gradeScore').value),
-                max_marks: 100, timestamp: new Date().toISOString()
-            };
-
-            if (databaseLiveMode) {
-                await setDoc(doc(collection(db, `students/${admin}/grades`)), gradeData);
-            }
-            alert(`Execution Completed: Transaction committed. Grade tracking verified and routed to student path [${admin}].`);
-            e.target.reset();
+            const adminNo = document.getElementById('gradeAdminNo').value.toUpperCase();
+            try {
+                const gradeRef = doc(collection(db, `students/${adminNo}/grades`));
+                await setDoc(gradeRef, {
+                    subject: document.getElementById('gradeSubjectSelect').value,
+                    assessment: document.getElementById('gradeAssessmentSelect').value,
+                    marks: parseFloat(document.getElementById('gradeScore').value),
+                    max_marks: 100, timestamp: new Date().toISOString()
+                });
+                alert(`Success: Marksheet values compiled and committed for student account [${adminNo}]`);
+                e.target.reset();
+            } catch (err) { alert("Write Operation Failed: " + err.message); }
         });
 
         document.getElementById('feePaymentForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const targetStudent = document.getElementById('feeAdminNo').value.toUpperCase();
-            const amountPaidValue = parseFloat(document.getElementById('feeAmount').value);
-            
-            if (databaseLiveMode) {
+            const adminNo = document.getElementById('feeAdminNo').value.toUpperCase();
+            const amount = parseFloat(document.getElementById('feeAmount').value);
+            try {
                 await addDoc(collection(db, "fee_receipts"), {
-                    student_id: targetStudent, amount: amountPaidValue,
-                    reference: document.getElementById('feeRef').value, timestamp: new Date().toISOString()
+                    student_id: adminNo, amount_paid: amount,
+                    reference_code: document.getElementById('feeRef').value, timestamp: new Date().toISOString()
                 });
-                await updateDoc(doc(db, "students", targetStudent), { fee_balance: increment(-amountPaidValue) });
-            }
-            alert(`Execution Completed: Atomic balance calculation completed. Financial ledger accounts adjusted (-${amountPaidValue} KES).`);
-            e.target.reset();
+                await updateDoc(doc(db, "students", adminNo), { fee_balance: increment(-amount) });
+                alert(`Success: Remittance tracking verified. Student account balance reduced safely.`);
+                e.target.reset();
+            } catch (err) { alert("Financial Balancing Aborted: " + err.message); }
         });
 
         document.getElementById('timetableForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            if(databaseLiveMode) {
+            try {
                 await addDoc(collection(db, "timetables"), {
-                    teacher: document.getElementById('ttTeacher').value,
-                    class: document.getElementById('ttClass').value,
-                    details: document.getElementById('ttDetails').value
+                    teacher_email: document.getElementById('ttTeacher').value,
+                    class_name: document.getElementById('ttClass').value,
+                    schedule_details: document.getElementById('ttDetails').value
                 });
-            }
-            alert("Execution Completed: Matrix scheduler propagation path locked across systems nodes.");
-            e.target.reset();
+                alert("Success: Timetable matrix schedule vectors updated.");
+                e.target.reset();
+            } catch (err) { alert("Transaction Failure: " + err.message); }
         });
 
         document.getElementById('dormForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const targetStudent = document.getElementById('dormAdminNo').value.toUpperCase();
-            const targetDormMapping = document.getElementById('dormSelect').value;
-
-            if (databaseLiveMode) {
-                await updateDoc(doc(db, "students", targetStudent), { dormitory: targetDormMapping });
-            }
-            alert(`Execution Completed: Structural housing allocation finalized [${targetStudent} ➔ ${targetDormMapping}].`);
-            e.target.reset();
+            const adminNo = document.getElementById('dormAdminNo').value.toUpperCase();
+            try {
+                await updateDoc(doc(db, "students", adminNo), { dormitory: document.getElementById('dormSelect').value });
+                alert(`Success: Housing index updated successfully for [${adminNo}].`);
+                e.target.reset();
+            } catch (err) { alert("Housing Assignment Aborted: " + err.message); }
         });
 
         document.getElementById('disciplineForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (databaseLiveMode) {
+            try {
                 await addDoc(collection(db, "discipline_logs"), {
-                    student: document.getElementById('discAdminNo').value.toUpperCase(),
-                    type: document.getElementById('discType').value,
-                    notes: document.getElementById('discNotes').value,
-                    timestamp: new Date().toISOString()
+                    student_id: document.getElementById('discAdminNo').value.toUpperCase(),
+                    incident_type: document.getElementById('discType').value,
+                    case_notes: document.getElementById('discNotes').value, timestamp: new Date().toISOString()
                 });
-            }
-            alert("Execution Completed: Disciplinary registry vector filed and encrypted into student history registry.");
-            e.target.reset();
+                alert("Success: Disciplinary case logging pipeline complete.");
+                e.target.reset();
+            } catch (err) { alert("Registry Writing Fault: " + err.message); }
         });
 
         document.getElementById('staffForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (databaseLiveMode) {
+            try {
                 await addDoc(collection(db, "users"), {
                     email: document.getElementById('staffEmail').value.toLowerCase(),
                     name: document.getElementById('staffName').value,
                     roles: document.getElementById('staffRoles').value.split(',').map(r => r.trim().toLowerCase())
                 });
-            }
-            alert("Execution Completed: Access roles compiled and mapped into infrastructure permission framework.");
-            e.target.reset();
+                alert("Success: Identity authorization permission payload deployed.");
+                e.target.reset();
+            } catch (err) { alert("Staff Assignment Aborted: " + err.message); }
         });
 
-        // 4. INLINE INJECTED PWA BACKGROUND SERVICE WORKER CONTAINER PIPELINE
+        // REAL-TIME READ TRANSACTION PIPELINE FOR STUDENT DASHBOARDS
+        async function fetchLiveStudentLedgerData() {
+            const studentId = auth.currentUser.email.split('@')[0];
+            const docSnap = await getDoc(doc(db, "students", studentId));
+            if(docSnap.exists()){
+                const data = docSnap.data();
+                document.getElementById('studClass').innerText = data.current_class;
+                document.getElementById('studDorm').innerText = data.dormitory;
+                document.getElementById('studFeeBalance').innerText = `${data.fee_balance.toLocaleString()} KES`;
+            }
+
+            const gradesSnap = await getDocs(collection(db, `students/${studentId}/grades`));
+            const tbody = document.querySelector('#studentGradesTable tbody');
+            tbody.innerHTML = '';
+            
+            if(gradesSnap.empty) {
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No processing logs found for current academic cycle.</td></tr>`;
+                return;
+            }
+            gradesSnap.forEach(gDoc => {
+                const g = gDoc.data();
+                tbody.innerHTML += `<tr>
+                    <td><strong>${g.subject}</strong></td>
+                    <td>${g.assessment}</td>
+                    <td>${g.marks}%</td>
+                    <td>${g.max_marks}%</td>
+                </tr>`;
+            });
+        }
+
+        // INLINE SERVICE WORKER ACTIVATION CONTAINER 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 const swCode = `
-                    const CACHE_NAME = 'bomani-v1';
+                    const CACHE_NAME = 'bomani-prod-v1';
                     self.addEventListener('install', (e) => {
                         e.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(['/'])));
                     });
@@ -743,7 +712,7 @@
                 `;
                 const blob = new Blob([swCode], { type: 'application/javascript' });
                 const workerUrl = URL.createObjectURL(blob);
-                navigator.serviceWorker.register(workerUrl).catch(err => console.log("Worker registration held:", err));
+                navigator.serviceWorker.register(workerUrl).catch(err => console.log("Worker pipeline offline path fallback execution."));
             });
         }
     </script>
